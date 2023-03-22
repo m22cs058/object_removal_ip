@@ -1,7 +1,7 @@
 import os
 import cv2 as cv
 
-main_folder = 'Image_data'
+main_folder = 'dataset'
 src = 'Original'
 des = 'Pre_image'
 

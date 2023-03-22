@@ -7,7 +7,7 @@ import timeit
 import os
 
 
-main_folder = 'Image_data'
+main_folder = 'dataset'
 src = 'Pre_image'
 mask_des = 'Mask'
 TELEA_des = 'Final_image/INPAINT_TELEA'

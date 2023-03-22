@@ -1,7 +1,7 @@
 # OBJECT REMOVAL USING IMAGE INPAINTING
 
 - import required libraries from requirements.txt files
-- now in Image_data 3 folders are present 
+- now in dataset 3 folders are present 
 - Final_image for output, Original for original dataset, Pre_image for preprocess image
 
 preprocess.py

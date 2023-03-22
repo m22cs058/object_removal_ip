@@ -3,7 +3,7 @@ import numpy as np
 from skimage.metrics import structural_similarity as ssim
 import os
 
-main_folder = 'Image_data'
+main_folder = 'dataset'
 gt_src = 'Pre_image'
 telea_des = 'Final_image/INPAINT_TELEA'
 ns_des = 'Final_image/INPAINT_NS'
