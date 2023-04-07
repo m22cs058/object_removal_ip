@@ -1,46 +1,49 @@
-- import required libraries from requirements.txt files
-- now in Image_data 3 folders are present 
-- Final_image for output, Original for original dataset, Pre_image for preprocess image
+# Object Removal using Image Inpainting
 
-preprocess.py
-- it prepocess the image for reshape and rename and store in Pre_image folder
+Object removal using image inpainting is a computer vision project that involves removing unwanted objects or regions from an image and filling in the resulting gap with plausible content using inpainting techniques. This project uses traditional pre-deep learning algorithms to analyze the surrounding pixels and textures of the target object, then generates a realistic replacement that blends seamlessly into the original image. The objective is to create an aesthetically pleasing image that appears as though the removed object or region was never there. 
 
-object_remove.py
-- it has four method for object remove
-- first it add some mask unwanted object in Pre_image folder image then apply different method for object remove and store different method output in Final_image methodwise folder
+![Selecting Image Area](https://drive.google.com/file/d/1T2KYk94-lG0CxX2nqUYldo3RRSzA-_sy/view?usp=share_link)
 
-Eval.py
-- it is for evaluation metcis
-- it has four method to evaluate image namely MSE, NMSE, PSNR, SSIM
-- outcome of eval.py
-  TELEA
-  max mse: 44.07716666666666 | min mse: 1.914711111111111 | mean ssim: 20.78150479519256
-  max nmse: 0.5238253473957841 | min nmse: 0.016925997136830524 | mean nmse: 0.20703806658563623
-  max psnr: 44.22261778709039 | min psnr: 31.688666910990513 | mean psnr: 35.347356285753364
-  max ssim: 0.9848403540374433 | min ssim: 0.783699467515716 | mean ssim: 0.8942371562307038
+## Dataset
+A carefully curated subset of 300 images has been selected from the massive ImageNet dataset, which contains millions of labeled images. ImageNet is a large-scale visual recognition database designed to support the development and training of deep learning models. It consists of over 14 million images belonging to more than 21,000 categories. The dataset has played a pivotal role in advancing computer vision research and has been used to develop state-of-the-art image classification algorithms. By using a subset of ImageNet, researchers can efficiently test their models on a smaller scale while still benefiting from the breadth and depth of the full dataset. This dataset is used here to check the performance of different inpainting algorithms.
+The dataset is stored in Image_data/Original.
+## Setup
 
-  NS
-  max mse: 41.28078518518519 | min mse: 1.4838111111111112 | mean ssim: 17.75131336767231
-  max nmse: 0.4774210902418585 | min nmse: 0.013116852183350892 | mean nmse: 0.17685686240864684
-  max psnr: 45.329864173709126 | min psnr: 31.97332411629808 | mean psnr: 36.17240383826767
-  max ssim: 0.9889984646336629 | min ssim: 0.7922687833555144 | mean ssim: 0.916128681204296
+Create a conda environment
 
-  FAST
-  max mse: 20.727974074074073 | min mse: 0.5072666666666666 | mean ssim: 5.615563073338234
-  max nmse: 0.19367767847567333 | min nmse: 0.004484224329082779 | mean nmse: 0.05609529410676043
-  max psnr: 50.436209763159674 | min psnr: 34.96523504092265 | mean psnr: 41.46586756769089
-  max ssim: 0.9968997500939262 | min ssim: 0.946152537061114 | mean ssim: 0.9827801212958521
+    conda create -n object-removal python=3.9.13
+    conda activate object-removal
+ 
+Install Necessary Libraries
 
-  BEST
-  max mse: 21.629033333333332 | min mse: 0.5005555555555555 | mean ssim: 6.399564925190092
-  max nmse: 0.2226420100149014 | min nmse: 0.004424898278906102 | mean nmse: 0.06390040917263598
-  max psnr: 50.04912750346968 | min psnr: 34.78043250923988 | mean psnr: 40.724516159263565
-  max ssim: 0.9967562666532085 | min ssim: 0.9442620625585036 | mean ssim: 0.9759724884590634
+    pip install -r requirements.txt
 
 
-test.py
-- Using this file we can manually remove the object with a brush
-- After executing a window with the image will be opened.
-- Using cursor select the area that needs to be removed.
-- After selecting the area press the key 'i', 'j', 'k', 'l' as per the algorithm we need to execute
-- 'i' = INPAINT_FSR_FAST, 'j' = INPAINT_FSR_BEST, 'k' = INPAINT_TELEA, 'l' = INPAINT_NS
+## Implementation
+
+### Object Removal
+
+Activate the environment
+
+    conda activate object-removal
+
+Save the image file in the working directory as image.jpg and run the command
+
+    python test.py
+
+### Comparison of Different Inpainting Algorithms
+
+After cloning this repostiory. Go to Image_data/ and delete all folders except Original. Then follow these steps:
+
+    conda activate object-removal
+To preprocess the dataset
+
+    python preprocess.py
+To apply the various inpainting algorithms and save the output images in Image_data/Final_Image
+
+    python object_remove.py
+To print the evaluation metrics
+
+    python eval.py
+
+
