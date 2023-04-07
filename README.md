@@ -1,9 +1,8 @@
 # Object Removal using Image Inpainting
 
 Object removal using image inpainting is a computer vision project that involves removing unwanted objects or regions from an image and filling in the resulting gap with plausible content using inpainting techniques. This project uses traditional pre-deep learning algorithms to analyze the surrounding pixels and textures of the target object, then generates a realistic replacement that blends seamlessly into the original image. The objective is to create an aesthetically pleasing image that appears as though the removed object or region was never there. 
-
-![Selecting Image Area](https://drive.google.com/file/d/1T2KYk94-lG0CxX2nqUYldo3RRSzA-_sy/view?usp=share_link)
-
+![Video](https://github.com/m22cs058/object_removal_ip/blob/04181a1a009619570d5af6ea0d436d3e8599ecf9/info/image_selection_cv_project.mkv)
+![Image](https://photos.app.goo.gl/Wx6s6GWouMR3iDVA9)
 ## Dataset
 A carefully curated subset of 300 images has been selected from the massive ImageNet dataset, which contains millions of labeled images. ImageNet is a large-scale visual recognition database designed to support the development and training of deep learning models. It consists of over 14 million images belonging to more than 21,000 categories. The dataset has played a pivotal role in advancing computer vision research and has been used to develop state-of-the-art image classification algorithms. By using a subset of ImageNet, researchers can efficiently test their models on a smaller scale while still benefiting from the breadth and depth of the full dataset. This dataset is used here to check the performance of different inpainting algorithms.
 The dataset is stored in Image_data/Original.
