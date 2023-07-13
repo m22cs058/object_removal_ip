@@ -49,3 +49,20 @@ Print the evaluation metrics
     python eval.py
 
 
+### Methos used and Result Info
+
+Four methods are used for Image inpainting
+    INPAINT_FSR_FAST - work fast and give good result
+    INPAINT_FSR_BEST - work slow but give best result
+    INPAINT_TELEA - work fast but results are not good as first two methos
+    INPAINT_NS - work fast but results are same as "INPAINT_TELEA"
+
+
+Result:
+
+    Metrics     TELEA       NS          FSRFAST     FSRBEST
+    MSE         20.7815     17.7513     5.6155      6.3995
+    NMSE        0.2070      0.1768      0.0560      0.0639
+    PSNR        35.3473     36.1724     41.4658     40.7245
+    SSIM        0.8942      0.9161      0.9827      0.9759
+    Time        0.3544      0.3355      1.3708      24.7794
